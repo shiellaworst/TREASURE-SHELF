@@ -45,8 +45,7 @@ function getRecommendedBooks()
 
 
 
-//#REGION_GENRES
-
+#region getRecommended
 function getRecomCLick()
 {
   global $connection;
@@ -68,6 +67,8 @@ function getRecomCLick()
 
   return $result;
 }
+
+
 function getRecomCLick1()
 {
   global $connection;
@@ -508,8 +509,8 @@ function getRecomCLick20()
 
   return $result;
 }
+#endregion
 
-//END REGION-GENRES
 
 
 function getRecomByGenre()
@@ -536,19 +537,7 @@ function getRecomByGenre()
 
 
 
-// function getBooksData()
-// {
-//   global $connection;
 
-//   $query = $connection->query("SELECT * FROM books JOIN authors ON authors.id = books.author_id");
-//   $result = array();
-
-//   while ($row = $query->fetch_assoc()) {
-//     array_push($result, $row);
-//   }
-
-//   return $result;
-// }
 
 
 function getBooksData()
@@ -618,59 +607,60 @@ function specificBook()
 }
 
 
-function seek() 
-{ 
-  global $connection; 
-  $title = $_GET['id']; 
- 
+function seek()
+{
+  global $connection;
+  $title = $_GET['id'];
+
   // Check if the book title is in the books table 
   $query = "SELECT * FROM books  
             JOIN books_genres ON books.id = books_genres.book_id  
             JOIN authors ON books.author_id = authors.id  
-            WHERE title = '$title'"; 
-  $result = $connection->query($query); 
- 
-  if ($result->num_rows > 0) { 
-    $rows = array(); 
-    while ($row = $result->fetch_assoc()) { 
-      array_push($rows, $row); 
-    } 
-    return $rows; 
-  } 
- 
+            WHERE title = '$title'";
+  $result = $connection->query($query);
+
+  if ($result->num_rows > 0) {
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      array_push($rows, $row);
+    }
+    return $rows;
+  }
+
   // If not, check if it's in the national_books table 
   $query = "SELECT * FROM national_books  
              
-            WHERE title = '$title'"; 
-  $result = $connection->query($query); 
- 
- 
-  if ($result->num_rows > 0) { 
-    $rows = array(); 
-    while ($row = $result->fetch_assoc()) { 
-      array_push($rows, $row); 
-    } 
-    return $rows; 
-  } 
- 
- 
+            WHERE title = '$title'";
+  $result = $connection->query($query);
+
+
+  if ($result->num_rows > 0) {
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      array_push($rows, $row);
+    }
+    return $rows;
+  }
+
+
   // If not, check if it's in the national_books table 
   $query = "SELECT * FROM local_books 
              
-            WHERE title = '$title'"; 
-  $result = $connection->query($query); 
- 
- 
-  if ($result->num_rows > 0) { 
-    $rows = array(); 
-    while ($row = $result->fetch_assoc()) { 
-      array_push($rows, $row); 
-    } 
-    return $rows; 
-  } 
+            WHERE title = '$title'";
+  $result = $connection->query($query);
+
+
+  if ($result->num_rows > 0) {
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      array_push($rows, $row);
+    }
+    return $rows;
+  }
   // If the book title is not found in either table, return an empty array 
-  return array(); 
+  return array();
 }
+
 function getUpBook()
 {
 
@@ -727,4 +717,10 @@ function importSurvey($user_id, $book_id, $author_id, $genre_id)
   }
 
   return $result;
+}
+
+
+function likedBooks()
+{
+  global $connection;
 }

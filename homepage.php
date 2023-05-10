@@ -261,17 +261,28 @@ if (isset($_SESSION['user_id'])) { // Check if user_id is set in $_SESSION
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <?php foreach ($books as $book) : ?>
-                    <a href="book-display.php?id=<?= $book['id'] ?>">
-                        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-transparent  h-100">
-                            <img class="w-full" src="<?= $book['image'] ?>" alt="Image description">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black "><?= $book['title'] ?></div>
-                                <!-- <p class="text-base text-slate-600"><?= $book['name'] ?></p> -->
+                    <div class="relative">
+
+                        <button class="absolute top-0 right-0 mt-2 mr-2 like-button" data-book-id="<?= $book['id'] ?>">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#C7D3BF] like-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                            </svg>
+                        </button>
+
+
+
+                        <a href="book-display.php?id=<?= $book['id'] ?>">
+                            <div class=" max-w-sm rounded overflow-hidden shadow-lg bg-transparent  h-100">
+                                <img class="w-full" src="<?= $book['image'] ?>" alt="Image description">
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-black "><?= $book['title'] ?></div>
+                                    <!-- <p class="text-base text-slate-600"><?= $book['name'] ?></p> -->
+                                </div>
+
+
                             </div>
-                        </div>
-                    </a>
-
-
+                        </a>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
@@ -391,6 +402,17 @@ if (isset($_SESSION['user_id'])) { // Check if user_id is set in $_SESSION
             } else {
                 $(".search-results").html("");
             }
+        });
+    });
+
+
+    //book likes
+    const likeButtons = document.querySelectorAll('.like-button');
+    likeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const icon = button.querySelector('.like-icon');
+            button.classList.toggle('liked');
+            icon.classList.toggle('fill-current');
         });
     });
 </script>
