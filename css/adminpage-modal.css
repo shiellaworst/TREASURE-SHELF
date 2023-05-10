@@ -1,0 +1,415 @@
+/*** ADDING OF USER****/
+.modal_add {
+    width: 80%;
+    height: 400px;
+    background: #434f55f4;
+    border-radius: 10px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: aliceblue;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content {
+    width: 80%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content input[type='text'],
+input[type='password'],
+input[type='email'] {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: white;
+    border-width: 0.75px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+}
+
+.modal_content input[type='submit'] {
+    border-radius: 20px;
+    background-color: #9EA6AA;
+    color: rgb(0, 0, 0) !important;
+    font-size: 12px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 5px 5px black;
+    margin-top: 10px;
+}
+
+.modal_content input::placeholder {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    opacity: 80%;
+}
+
+
+.modal_content select {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: white;
+    border-width: 0.1px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+    opacity: 80%;
+
+
+}
+
+.modal_content select option {
+    background-color: transparent;
+    color: rgb(0, 0, 0) !important;
+}
+
+
+.open-modal_add {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1;
+}
+
+.modal_add h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+/*** ADDING OF USER****/
+
+
+
+/*** UPDATE USER ****/
+.modal_up {
+    margin-top: 130px;
+    margin-left: 35px;
+    width: 80%;
+    height: 400px;
+    border-radius: 10px;
+    position: absolute;
+    text-align: center;
+    padding: 0 30px 30px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+}
+
+.editpage {
+    animation: transitionIn 0.90s;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.modal_content1 {
+    width: 80%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content1 input[type='text'],
+input[type='password'],
+input[type='email'] {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: rgb(255, 255, 255) !important;
+    font-size: 12px;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+}
+
+.modal_content1 input[type='submit'] {
+    border-radius: 20px;
+    background-color: #9EA6AA;
+    color: rgb(0, 0, 0) !important;
+    font-size: 12px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 5px 5px black;
+    margin-top: 10px;
+}
+
+.modal_content1 input::placeholder {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: rgb(255, 255, 255) !important;
+    font-size: 12px;
+    opacity: 80%;
+}
+
+
+.modal_content1 select {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+    opacity: 80%;
+
+
+}
+
+.modal_content1 select option {
+    background-color: transparent;
+    color: rgb(0, 0, 0) !important;
+}
+
+
+.open-modal_up {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1;
+}
+
+.modal_up h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+
+.modal_up button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px;
+    background: #9EA6AA;
+    color: aliceblue;
+    border: 0;
+    outline: none;
+    font-size: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px black;
+    height: auto;
+}
+
+/*** UPDATE USER ****/
+
+
+
+/*** ADDING BOOKS MODAL****/
+
+.modal_add_book {
+    width: 80%;
+    height: 450px;
+    background: #434f55f4;
+    border-radius: 10px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: aliceblue;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+
+.modal_content_addbook {
+    width: 80%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.modal_content_addbook input {
+    border-radius: 20px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: white;
+    border-width: 0.75px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+    margin-left: -11px;
+}
+
+
+.modal_content_addbook input[type='text'],
+input[type='password'],
+input[type='email'] {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: white;
+    border-width: 0.75px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+}
+
+.modal_content_addbook input[type='file'] {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: white;
+    border-width: 0.75px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+}
+
+.modal_content_addbook input[type='submit'] {
+    border-radius: 20px;
+    background-color: #9EA6AA;
+    color: white !important;
+    font-size: 12px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 5px 5px black;
+    margin-top: 10px;
+    text-indent: 0px;
+}
+
+.modal_content_addbook input::placeholder,
+textarea::placeholder {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    opacity: 80%;
+}
+
+.modal_content_addbook select {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: white;
+    border-width: 0.75px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 30px;
+}
+
+.modal_content_addbook textarea {
+    border-radius: 20px;
+    text-indent: 15px;
+    background-color: transparent;
+    color: white !important;
+    font-size: 12px;
+    border-color: white;
+    border-width: 0.75px;
+    margin-bottom: 5px;
+    width: 230px;
+    height: 100px;
+    resize: none;
+    padding-top: 7px;
+    margin-left: -11px;
+}
+
+
+.modal_content_addbook select option {
+    color: black;
+}
+
+
+.open-modal_add_book {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal_add_book h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+
+.modal_add_book button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px;
+    background: #9EA6AA;
+    color: aliceblue;
+    border: 0;
+    outline: none;
+    font-size: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px black;
+    height: auto;
+}
+
+#img-preview {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 175px;
+    height: 175px;
+    border: 2px dashed #333;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#img-preview img {
+    width: 120px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

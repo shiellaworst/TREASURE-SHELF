@@ -1,0 +1,444 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+html, body{
+    max-height: 90vh;
+  }
+  Body{
+    background-image: url("../images/wall2.png");
+    background-size: 130vw 150vh;
+    font-family: 'Roboto', sans-serif;
+    background-repeat: no-repeat;
+    max-height: 100vh;
+}
+
+
+.login-box{
+    background-color: #fff6e771 ;
+    max-height: fit-content;
+    margin: 20px 500px 50px 500px;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+}
+
+
+.signup {
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+}
+
+.signup img{
+    max-width: 200px;
+}
+
+.signup .npt i{
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 5px;
+}
+
+.npt input[type='email']
+{
+    border: none;
+    border-bottom: 2px solid rgb(38, 38, 38);
+    background-color:transparent;
+    width: 205px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    font-size: 20px;
+
+}
+
+.npt input[type='password']{
+    border: none;
+    border-bottom: 2px solid rgb(38, 38, 38);
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    width: 205px;
+    font-size: 20px;
+}
+
+#password{
+    border: none;
+    border-bottom: 2px solid rgb(38, 38, 38);
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+
+.npt input[type='submit']{
+    background-color: #b1b5b789;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 205px;
+    height: 35px;
+    border: none;
+    border: 1px Solid gray;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+}
+
+
+.npt input::placeholder{
+    font-size: 20px;
+    color: rgb(52, 52, 52);
+}
+
+
+span{
+    font-size: 12px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+
+}
+span a{
+    text-decoration: none;
+    color: rgb(74, 85, 183);
+}
+    
+
+.warning{
+    font-size: 12px;
+    position: absolute;
+    margin-top: -360px;
+    margin-left: 85px;
+    font-size: 14px;
+    color: brown;
+}
+
+
+
+/*** signup****/
+
+.register img{
+    max-width: 200px;
+}
+.register {
+    margin-top: -20px;
+    display: flex !important;
+    justify-content: center;
+}
+
+.npt1{
+    justify-content: center;
+}
+
+
+.npt1 input[type='email']
+{
+    border: none;
+    border-bottom: 2px solid rgb(38, 38, 38);
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    font-size: 20px;
+    max-width:fit-content;
+    
+}
+
+.npt1 input[type='password']
+{
+    border: none;
+    border-bottom: 2px solid rgb(38, 38, 38);
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    font-size: 20px;
+    max-width:fit-content;
+
+}
+
+.npt1 input[type='text']
+{
+    border: none;
+    border-bottom: 2px solid rgb(38, 38, 38);
+    background-color:transparent;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+    font-size: 20px;
+    max-width:fit-content;
+    
+}
+
+.npt1 input[type='submit']
+{
+    background-color: #b1b5b789;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 205px;
+    height: 35px;
+    border: none;
+    border: 1px Solid gray;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+
+    
+}
+.input-icons{
+    align-content: center;
+}
+
+
+.register .npt1 i{
+    position: absolute;
+    margin-left: 190px;
+    margin-top: 5px;
+}
+
+
+.emailText{
+    margin-top: -5px;
+}
+
+.passText{
+    margin-top: -5px;
+    width: 200px;
+}
+.passText1{
+    margin-top: -5px;
+    width: 200px;
+}
+.emailBox{
+    margin-bottom: 10px;
+}
+
+.npt1 input::placeholder{
+    font-size: 20px;
+    color: rgb(52, 52, 52);
+}
+
+.login-boxs{
+    background-color: #d9d2c85c ;
+    max-height: fit-content;
+    margin: 50px 500px 50px 500px;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+}
+
+
+/*** MOBILE VIEW****/
+
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 360px) {
+
+    Body{
+        background-image: url("../images/wall1.png");
+        background-size: 130vw 150vh;
+        font-family: 'Roboto', sans-serif;
+        background-repeat: no-repeat;
+        max-height: 100vh;
+    }
+    
+    
+    .login-box{
+        background-color: #fff6e771 ;
+        max-height: fit-content;
+        margin: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+    }
+    
+    
+    .signup {
+        margin-top: 75px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .signup img{
+        max-width: 200px;
+    }
+    
+    .signup .npt i{
+        position: absolute;
+        margin-left: 180px;
+        margin-top: 5px;
+    }
+    
+    .npt input[type='email']
+    {
+        border: none;
+        border-bottom: 2px solid rgb(38, 38, 38);
+        background-color:transparent;
+        width: 205px;
+        color: rgb(0, 0, 0);
+        margin-bottom: 15px;
+        font-size: 20px;
+    
+    }
+    
+    .npt input[type='password']{
+        border: none;
+        border-bottom: 2px solid rgb(38, 38, 38);
+        background-color:transparent;
+        color: rgb(0, 0, 0);
+        margin-bottom: 10px;
+        width: 205px;
+        font-size: 20px;
+    }
+    
+    #password{
+        border: none;
+        border-bottom: 2px solid rgb(38, 38, 38);
+        background-color:transparent;
+        color: rgb(0, 0, 0);
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    
+    
+    .npt input[type='submit']{
+        background-color: #b1b5b789;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        width: 205px;
+        height: 35px;
+        border: none;
+        border: 1px Solid gray;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+    }
+    
+    
+    .npt input::placeholder{
+        font-size: 20px;
+        color: rgb(52, 52, 52);
+    }
+    
+    
+    span{
+        font-size: 12px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+    
+    }
+    span a{
+        text-decoration: none;
+        color: rgb(74, 85, 183);
+    }
+        
+    
+    .warning{
+        font-size: 12px;
+        position: absolute;
+        margin-top: -360px;
+        margin-left: 85px;
+        font-size: 14px;
+        color: brown;
+    }
+    
+    
+    
+    /*** signup****/
+    
+    .register img{
+        max-width: 200px;
+    }
+    .register {
+        margin-top: -20px;
+        display: flex !important;
+        justify-content: center;
+    }
+    
+    .npt1{
+        justify-content: center;
+    }
+    
+    
+    .npt1 input[type='email']
+    {
+        border: none;
+        border-bottom: 2px solid rgb(38, 38, 38);
+        background-color:transparent;
+        color: rgb(0, 0, 0);
+        margin-bottom: 15px;
+        font-size: 20px;
+        max-width:fit-content;
+        
+    }
+    
+    .npt1 input[type='password']
+    {
+        border: none;
+        border-bottom: 2px solid rgb(38, 38, 38);
+        background-color:transparent;
+        color: rgb(0, 0, 0);
+        margin-bottom: 15px;
+        font-size: 20px;
+        max-width:fit-content;
+    
+    }
+    
+    .npt1 input[type='text']
+    {
+        border: none;
+        border-bottom: 2px solid rgb(38, 38, 38);
+        background-color:transparent;
+        color: rgb(0, 0, 0);
+        margin-bottom: 15px;
+        font-size: 20px;
+        max-width:fit-content;
+        
+    }
+    
+    .npt1 input[type='submit']
+    {
+        background-color: #b1b5b789;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        width: 205px;
+        height: 35px;
+        border: none;
+        border: 1px Solid gray;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+    
+        
+    }
+    .input-icons{
+        align-content: center;
+    }
+    
+    
+    .register .npt1 i{
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 5px;
+    }
+    
+    
+    .emailText{
+        margin-top: -5px;
+    }
+    
+    .passText{
+        margin-top: -5px;
+        width: 200px;
+    }
+    .passText1{
+        margin-top: -5px;
+        width: 200px;
+    }
+    .emailBox{
+        margin-bottom: 10px;
+    }
+    
+    .npt1 input::placeholder{
+        font-size: 20px;
+        color: rgb(52, 52, 52);
+    }
+    
+    .login-boxs{
+        background-color: #d9d2c85c ;
+        max-height: fit-content;
+        margin: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.446);
+    }
+
+
+
+  }
