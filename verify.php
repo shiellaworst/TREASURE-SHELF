@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","uno","Juan23456789","books_dataset");
+$con=mysqli_connect("localhost","root","","books_dataset");
 
 if(mysqli_connect_error()){
     echo"<script>alert('cannot connect to database');</script>";
