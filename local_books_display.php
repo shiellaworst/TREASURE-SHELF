@@ -56,10 +56,14 @@ $book = getUpBook($id)[0];
             </div>
 
             <div class="sypnosis">
-                <h5>Sypnosis:</h5>
-                <p>There's no synopsis availble you can visit the store by clicking the button under. </span></p>
-
+                <h5>Synopsis:</h5>
+                <?php if ($book['sypnosis'] == null) { ?>
+                    <p>There's no synopsis available for this book. You can visit the store by clicking the button below.</p>
+                <?php } else { ?>
+                    <p><?= $book['sypnosis'] ?></p>
+                <?php } ?>
             </div>
+
 
             <div class="linkbtn">
                 <a target="_blank" rel="noopener noreferrer" href="<?= $book['link'] ?>"><input type="button" value="Visit Store"></input></a>

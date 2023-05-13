@@ -3,8 +3,6 @@ require_once "database.php";
 $booksHot = getBooksData();
 $books = getRecommendedBooks();
 $upPress = getUpPress();
-$nationalBook = getNational();
-// $books = getRecommendedBooks();
 session_start(); // Start the session to access $_SESSION
 
 if (!isset($_SESSION['user_id'])) {
@@ -282,10 +280,11 @@ if (isset($_SESSION['user_id'])) { // Check if user_id is set in $_SESSION
 
 
             <div class="font-bold text-2xl mb-4 mt-5 ">Our hot picks for you</div>
+            <div class="font-bold text-sm mb-4 text-slate-500">Locally availble books</div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <?php foreach ($booksHot as $bookH) : ?>
-                    <a href="book-display.php?id=<?= $bookH['id'] ?>">
+                    <a href="local_books_display.php?id=<?= $bookH['id'] ?>">
                         <div class="max-w-sm rounded overflow-hidden shadow-lg bg-transparent  h-100">
                             <img class="w-full" src="<?= $bookH['image'] ?>" alt="Image description">
                             <div class="px-6 py-4">
@@ -303,12 +302,12 @@ if (isset($_SESSION['user_id'])) { // Check if user_id is set in $_SESSION
 
 
 
-            <div class="font-bold text-2xl mt-5 ">College Books</div>
+            <div class="font-bold text-2xl mt-5 ">Educational Books</div>
             <div class="font-bold text-sm mb-4 text-slate-500">UP PRESS ONLINE STORE</div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <?php foreach ($upPress as $booksUP) : ?>
-                    <a href="up-book-display.php?id=<?= $booksUP['id'] ?>">
+                    <a href="local_books_display.php?id=<?= $booksUP['id'] ?>">
                         <div class="max-w-sm rounded overflow-hidden shadow-lg bg-transparent  h-100">
                             <img class="w-full" src="<?= $booksUP['image'] ?>" alt="Image description">
                             <div class="px-6 py-4">
@@ -324,24 +323,7 @@ if (isset($_SESSION['user_id'])) { // Check if user_id is set in $_SESSION
 
 
 
-            <div class="font-bold text-2xl mt-5 ">Locally Available</div>
 
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <?php foreach ($nationalBook as $booksNb) : ?>
-                    <a href="nb-display.php?id=<?= $booksNb['id'] ?>">
-                        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-transparent  h-100">
-                            <img class="w-full" src="<?= $booksNb['image'] ?>" alt="Image description">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black "><?= $booksNb['title'] ?></div>
-                                <p class="text-base text-slate-600"><?= $booksNb['author'] ?></p>
-                            </div>
-                        </div>
-                    </a>
-
-
-                <?php endforeach; ?>
-            </div>
             <!-- #End region 
 
             

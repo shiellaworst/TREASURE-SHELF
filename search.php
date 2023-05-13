@@ -1,17 +1,30 @@
 <?php
 require_once "database.php";
 
+// if (isset($_POST["search"])) {
+//     $search = $_POST["search"];
+//     $query = "SELECT  image, title FROM ( 
+//         SELECT  image, title FROM books 
+//         UNION 
+//         SELECT image COLLATE utf8mb4_unicode_ci, title COLLATE utf8mb4_unicode_ci FROM national_books 
+//         UNION 
+//         SELECT image COLLATE utf8mb4_unicode_ci, title COLLATE utf8mb4_unicode_ci FROM local_books 
+//     ) AS combined 
+//     WHERE title LIKE '%$search%' 
+//     LIMIT 4";
+
+
 if (isset($_POST["search"])) {
     $search = $_POST["search"];
     $query = "SELECT  image, title FROM ( 
         SELECT  image, title FROM books 
         UNION 
-        SELECT image COLLATE utf8mb4_unicode_ci, title COLLATE utf8mb4_unicode_ci FROM national_books 
-        UNION 
-        SELECT image COLLATE utf8mb4_unicode_ci, title COLLATE utf8mb4_unicode_ci FROM local_books 
+        SELECT image COLLATE utf8mb4_unicode_ci, title COLLATE utf8mb4_unicode_ci FROM collections
+        
     ) AS combined 
     WHERE title LIKE '%$search%' 
     LIMIT 4";
+
 
     $result = mysqli_query($connection, $query);
 

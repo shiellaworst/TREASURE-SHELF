@@ -555,7 +555,7 @@ function getBooksData()
 {
   global $connection;
 
-  $query = $connection->query("SELECT * FROM books JOIN authors ON authors.id = books.id ORDER BY RAND() LIMIT 8");
+  $query = $connection->query("SELECT * FROM collections  ORDER BY RAND() LIMIT 8");
   $result = array();
 
   while ($row = $query->fetch_assoc()) {
@@ -569,7 +569,7 @@ function getUpPress()
 {
   global $connection;
 
-  $query = $connection->query("SELECT * FROM local_books ORDER BY RAND() LIMIT 8");
+  $query = $connection->query("SELECT * FROM collections WHERE link LIKE '%press.up.edu%'  ORDER BY RAND() LIMIT 8");
   $result = array();
 
   while ($row = $query->fetch_assoc()) {
@@ -580,19 +580,6 @@ function getUpPress()
 }
 
 
-function getNational()
-{
-  global $connection;
-
-  $query = $connection->query("SELECT * FROM national_books ORDER BY RAND() LIMIT 8");
-  $result = array();
-
-  while ($row = $query->fetch_assoc()) {
-    array_push($result, $row);
-  }
-
-  return $result;
-}
 
 
 
@@ -618,58 +605,49 @@ function specificBook()
 }
 
 
-function seek() 
-{ 
-  global $connection; 
-  $title = $_GET['id']; 
- 
+function seek()
+{
+  global $connection;
+  $title = $_GET['id'];
+
   // Check if the book title is in the books table 
   $query = "SELECT * FROM books  
             JOIN books_genres ON books.id = books_genres.book_id  
             JOIN authors ON books.author_id = authors.id  
-            WHERE title = '$title'"; 
-  $result = $connection->query($query); 
- 
-  if ($result->num_rows > 0) { 
-    $rows = array(); 
-    while ($row = $result->fetch_assoc()) { 
-      array_push($rows, $row); 
-    } 
-    return $rows; 
-  } 
- 
-  // If not, check if it's in the national_books table 
-  $query = "SELECT * FROM national_books  
+            WHERE title = '$title'";
+  $result = $connection->query($query);
+
+  if ($result->num_rows > 0) {
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      array_push($rows, $row);
+    }
+    return $rows;
+  }
+
+  // If not, check if it's in the collections table 
+  $query = "SELECT * FROM collections  
              
-            WHERE title = '$title'"; 
-  $result = $connection->query($query); 
- 
- 
-  if ($result->num_rows > 0) { 
-    $rows = array(); 
-    while ($row = $result->fetch_assoc()) { 
-      array_push($rows, $row); 
-    } 
-    return $rows; 
-  } 
- 
- 
-  // If not, check if it's in the national_books table 
-  $query = "SELECT * FROM local_books 
-             
-            WHERE title = '$title'"; 
-  $result = $connection->query($query); 
- 
- 
-  if ($result->num_rows > 0) { 
-    $rows = array(); 
-    while ($row = $result->fetch_assoc()) { 
-      array_push($rows, $row); 
-    } 
-    return $rows; 
-  } 
+            WHERE title = '$title'";
+  $result = $connection->query($query);
+
+
+  if ($result->num_rows > 0) {
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      array_push($rows, $row);
+    }
+    return $rows;
+  }
+
+
+
+
+
+
+
   // If the book title is not found in either table, return an empty array 
-  return array(); 
+  return array();
 }
 function getUpBook()
 {
@@ -677,7 +655,7 @@ function getUpBook()
   global $connection;
   $id = $_GET['id'];
 
-  $query = $connection->query("SELECT * FROM local_books where id = $id ORDER BY RAND()");
+  $query = $connection->query("SELECT * FROM collections where id = $id ORDER BY RAND()");
 
   $result = array();
 
