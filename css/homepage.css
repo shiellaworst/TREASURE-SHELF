@@ -23,7 +23,7 @@
 
 
 body{
-    background-image: linear-gradient(to bottom, #FCEDCD, #98806f ) !important;
+    background-color: #FCEDCD !important;
     font-family: monospace  !important;
 }
 
@@ -36,6 +36,11 @@ body{
     text-align: center;
     width: 100%;
     background-color: #FCEDCD;
+}
+
+header{
+    background-color: #FCEDCD !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .header input{
