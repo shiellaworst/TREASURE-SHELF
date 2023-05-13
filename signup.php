@@ -122,7 +122,7 @@ if (isset($_POST['submit']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/signinup.css">
+    <link rel="stylesheet" href="css/Signinup.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -135,9 +135,9 @@ if (isset($_POST['submit']))
 
     <div class="signup-box">
         <form action="#" method="POST">
-        <div class="login-boxs">
-            <div class="register">
-                <div class="npt1">
+        <div class="login-box">
+                <div class="register">
+                    <div class="npt">
                     <img src="images/ts-logo1.png">
                     
                     <div>
