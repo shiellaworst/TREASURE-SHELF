@@ -137,3 +137,23 @@ body{
 .user-profile span p{
     margin:20px;
 }
+
+#img-preview {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 175px;
+    height: 175px;
+    border: 2px dashed #333;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#img-preview img {
+    width: 120px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
