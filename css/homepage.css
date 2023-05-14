@@ -43,6 +43,7 @@ header{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
+
 .header input{
     font-size: 12px;
     align-items: center;
@@ -55,6 +56,15 @@ header{
     font-size: 20px;
     align-items: center;
     text-indent: 12px;
+}
+
+.image img{
+    height: 35px;
+        width: 35px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        border-width: 2px black;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 #logo {
@@ -224,6 +234,16 @@ header{
     .header .user{
         display: flex;
         align-items: center;
+    }
+
+    .image img{
+        height: 30px;
+        width: 50px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        border-width: 2px black;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
     }
     
     #logo {
@@ -403,6 +423,8 @@ header{
         height: 100px;
     }
 
+
+
     .container a, .container h6{
         text-decoration:none !important;
         color: black;
@@ -476,7 +498,7 @@ header{
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
-    z-index: 130px !important;
+    z-index: 1000 !important;
 }
 
 .popup h2{
@@ -505,6 +527,7 @@ header{
     text-align: left;
     text-indent: 20px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .user-menu a i{
@@ -549,6 +572,7 @@ header{
     
     .popup img{
         width: 50px;
+        height: 50px;
         margin-top: -25px;
         border-radius: 50%;
         box-shadow: 0 2px 5px rgb(red, green, blue, alpha);

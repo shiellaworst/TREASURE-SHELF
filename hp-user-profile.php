@@ -11,12 +11,12 @@ if (!isset($_SESSION['user_id'])) {
   
 // Database configuration
 
-include('database.php');
+include('connection.php');
 
 // Get user data from database
 $user_id = $_SESSION['user_id']; // Get user ID from session
-$query = "SELECT * FROM users WHERE id = '$user_id'";
-$result = mysqli_query($connection, $query);
+$query = "SELECT * FROM `users` WHERE id = '$user_id'";
+$result = mysqli_query($conn, $query);
 
 if ($result) {
   $row = mysqli_fetch_assoc($result);
@@ -26,18 +26,35 @@ if ($result) {
   $email = $row['email'];
   $mi = $row['mi'];
   $password = $row['password'];
+  $user_img = $row['user_img'];
 } else {
   
-  echo "Error: " . mysqli_error($connection);
+  echo "Error: " . mysqli_error($conn);
 }
 
 
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']))  {
+
+    echo "<pre>";
+	print_r($_FILES['my_image']);
+	echo "</pre>";
+
+
+	$img_name = $_FILES['my_image']['name'];
+	$img_size = $_FILES['my_image']['size'];
+	$tmp_name = $_FILES['my_image']['tmp_name'];
+	$error = $_FILES['my_image']['error'];
+
+    
     $lname = $_POST['lname'];
     $fname = $_POST['fname'];
     $mi = $_POST['mi'];
     $email = $_POST['email'];
+    $new_img_name=$_POST['user_img'];
+
+    
+
     // $password = $_POST['password'];
 
     // Check if the password and confirm password fields match
@@ -49,16 +66,40 @@ if (isset($_POST['submit'])) {
 
         $sql = "UPDATE users SET lname='$lname', fname='$fname', mi='$mi', email='$email' WHERE id=$user_id";
 
-        if (mysqli_query($connection, $sql)) {
-            echo '<script>alert("Updated Succesfully"); window.location.href = "hp-user-profile.php";</script>';
-        } else {
-            echo "Error updating profile: " . mysqli_error($conn);
+        if (mysqli_query($conn, $sql)) {
+            echo '<script>alert("Updated Succesfully"); window.location.href="hp-user-profile.php";</script>';
+            if ($error === 0) {
+                if ($img_size > 6000000) {
+                    $em = "Sorry, your file is too large.";
+                    header("Location: hp-user-profile.php?error=$em");
+                }else {
+                    $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+                    $img_ex_lc = strtolower($img_ex);
+        
+                    $allowed_exs = array("jpg", "jpeg", "png"); 
+        
+                    if (in_array($img_ex_lc, $allowed_exs)) {
+                        $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+                        $img_upload_path = 'uploads/'.$new_img_name;
+                        move_uploaded_file($tmp_name, $img_upload_path);
+        
+                        // Insert into Database
+                        $sql = "UPDATE `users` SET user_img='$new_img_name', lname='$lname', fname='$fname', mi='$mi' WHERE id='$user_id'";
+                        if ($conn->query($sql) == TRUE) {
+                            echo '<script>alert("Updated Succesfully"); window.location.href="hp-user-profile.php";</script>';
+                            } 
+        
+                    }else {
+                        $em = "You can't upload files of this type";
+                        header("Location: hp-user-profile.php?error=$em");
+                    }
+                }
+        }else {
+                echo '<script>alert("Updated Succesfully"); window.location.href="hp-user-profile.php";</script>';
         }
     }
-
+}  
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,8 +109,8 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
     <!--======== CSS ======== -->
-    <link rel="stylesheet" type="text/css" href="css/user-profile.css"/>
-    <link rel="stylesheet" type="text/css" href="css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="css/User-profile.css"/>
+    <link rel="stylesheet" type="text/css" href="css/Loading.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"crossorigin="anonymous"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -88,27 +129,27 @@ if (isset($_POST['submit'])) {
             <i class="bi bi-box-arrow-left" Onclick="window.location.href='homepage.php?user_id=<?php echo $_SESSION['user_id']; ?>'"></i>
             <h1><b>PROFILE</b></h1>
         </div>
-        <div class="user-icon">
-            <img src="images/user.png">
-        </div>
-        <div class="add"><i class="bi bi-camera"></i></div>
-
-
 
         <div class="info">
             <h5><b>Personal Information</b></h5>
-            <form action="#" method="POST">
+
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <h6>IMAGE</h6>
+                <input type="hidden" name="id" value="<?php echo $row['id'] ?>" />
+                <div id="img-preview" value="<?php echo "<img src='uploads/".$row['user_img']."' >";?>">
+                    <?php echo "<img src='uploads/".$row['user_img']."' >";?>
+                </div>
+                <input type="file" accept="image/*" id="my_image" name="my_image"  name="user_img" value="<?php echo "<img src='uploads/".$row['user_img']."' >";?>" >
+
                 <h6>Last Name</h6>
                 <input type="text" name="lname" value="<?php echo $lname; ?>">
                 <h6>First Name</h6> 
                 <input type="text" name="fname" value="<?php echo $fname; ?>">
                 <h6>MI.</h6>
                 <input type="text" name="mi" value="<?php echo $mi; ?>">
-                <div style="pointer-events: none;">
                 <h6>Email Address</h6>
-                <input type="text" name="email" value="<?php echo $email; ?>"><br><br>
-                </div>
-                
+                <input type="text" name="email" value="<?php echo $email; ?>" disabled><br><br>
 
 
         
@@ -127,6 +168,27 @@ if (isset($_POST['submit'])) {
     </div>
 
   <script>
+
+const chooseFile = document.getElementById("my_image");
+        const imgPreview = document.getElementById("img-preview");
+        chooseFile.addEventListener("change", function () {
+        getImgData();
+        });
+
+
+        function getImgData() {
+        const files = chooseFile.files[0];
+        if (files) {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(files);
+            fileReader.addEventListener("load", function () {
+            imgPreview.innerHTML = '<img src="' + this.result + '" />';
+            });    
+        }
+        else{
+
+        }
+        }
     
     const password = document.getElementById("password");
         const password1 = document.getElementById("password1");
@@ -196,6 +258,8 @@ if (isset($_POST['submit'])) {
             // toggle the icon
             this.classList.toggle("bi-eye");
         });
+
+        
 
   </script>
 
