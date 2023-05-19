@@ -1,0 +1,118 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+:root{
+    /* ===== Color scheme ===== */
+    --primary-bg-color: #E5DDD3;
+    --secondary-bg-color:#30414B;
+    --text-color: #000;
+
+    /* ===== Color scheme ===== */
+    --btn-bg-color: #BCC4C9;
+
+
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+
+     /* ====== Logo ====== */
+     /* --logo: url('image/logo.png') */
+}
+
+body{
+    max-height: max-content;
+    background-image: url("../images/book_display.png");
+   
+    max-height: 100vh;
+    background-size: 300vw 200vh;
+
+}
+
+
+.back{
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.back h1{
+    font-size: 25px;
+    margin: 25px 25px 25px 25px;
+
+}
+
+
+.back i{
+    font-size: 25px;
+    margin: 25px 40px 25px 15px;
+
+}
+.bookdisplay{
+    background-color: #bcb89ebe;
+    display: flex;
+    align-content: center;
+    margin: -30px 30px 30px 30px;
+    border-style:double;
+    border-width: 5px;
+    border-color: #30414B;
+}
+.b-cover{
+    display: flex;
+    align-items: center;
+    margin: 10px 50px 10px 50px;
+}
+.b-cover .ttl{
+    margin-left: 20px;
+
+}
+
+.bookcontent{
+    font-size: 21px;
+    margin: 20px;
+}
+
+.bookcontent .b-cover img{
+    max-width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 5);
+}
+
+.bookcontent .genre{
+    margin-top: 20px;
+}
+.bookcontent .genre input{
+    background-color: rgb(193, 193, 193);
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+#more {display: none;}
+
+.bookcontent .sypnosis{
+    margin-top: 25px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.bookcontent .sypnosis button{
+    font-size: 16px;
+    border: none;
+    background-color: #00000000;
+    color: #3e3953;
+    margin-left: -5px;
+}
+
+.linkbtn input{
+    background-color: #4B5E6C ;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    font-size: 15px;
+
+}

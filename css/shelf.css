@@ -1,0 +1,152 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    /* ===== Color scheme ===== */
+    --primary-bg-color: #E5DDD3;
+    --secondary-bg-color:#30414B;
+    --text-color: #000;
+
+    /* ===== Color scheme ===== */
+    --btn-bg-color: #BCC4C9;
+
+
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+
+     /* ====== Logo ====== */
+     /* --logo: url('image/logo.png') */
+}
+
+body{
+    background-color:var(--primary-bg-color) !important;
+}
+
+ /* ====== <HEADER> ====== */
+
+.upper h2{
+    text-align: center;
+    position: fixed;       
+    width: 100%;
+    margin-top: 30px;
+
+}
+
+/* ====== </HEADER> ====== */
+
+
+
+ /* ====== CONTAINER ====== */
+
+.bookshelf{
+    padding: 0 10px 0 10px !important;
+}
+
+.container {
+    width: 100%;
+    height: 500px;
+    background-image:url(../images/shelf.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: -10px;
+}
+.container1 {
+    width: 100%;
+    height: 500px;
+    background-image:url(../images/shelf.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: -10px;
+}
+
+.container img{
+    max-width: 200px;
+    border-radius: 10px;
+    margin-top: 60px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 5);
+}
+
+.shelf-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin: 10px 0 0 0px;
+}
+
+
+
+
+ /* ====== Responsive View ====== */
+ @media only screen and (max-width: 720px) and (min-width: 280px) {
+
+/* ====== <HEADER> ====== */
+
+
+
+
+/* ====== </HEADER> ====== */
+    
+
+     /* ====== CONTAINER ====== */
+    
+   
+    .container {
+        width: 100%;
+        height: 165px;
+        background-image:url(../images/shelf.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-top: -28px;
+    }
+    .container .shelf-list img{
+        width: 70px;
+        height: 105px;
+        border-radius: 5px;
+        margin-top: 30px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 5);
+    }
+
+    .shelf-list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 15px 0 0 0px;
+    }
+    
+    
+
+
+}
+
+.back{
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.back h1{
+    font-size: 25px;
+    margin: 25px 25px 25px 25px;
+
+}
+
+
+.back i{
+    font-size: 25px;
+    margin: 25px 40px 25px 15px;
+
+}
+
+
+

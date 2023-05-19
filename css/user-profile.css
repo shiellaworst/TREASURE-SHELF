@@ -1,0 +1,297 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+:root{
+    /* ===== Color scheme ===== */
+    --primary-bg-color: #E5DDD3;
+    --secondary-bg-color:#30414B;
+    --text-color: #000;
+
+    /* ===== Color scheme ===== */
+    --btn-bg-color: #BCC4C9;
+
+
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+
+     /* ====== Logo ====== */
+     /* --logo: url('image/logo.png') */
+}
+
+body{
+    background-color: #e5ddd3 !important;
+}
+
+
+.user-profile .back{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.user-profile .back1{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.user-profile .back h1{
+    font-size: 25px;
+    margin: 25px 25px 25px 25px;
+}
+
+
+.user-profile .back i{
+    font-size: 25px;
+    margin: 25px 40px 25px 15px;
+}
+
+
+.user-icon img{
+    max-width: 130px;
+    display: flex;
+    margin-left: 120px;
+}
+
+.add i{
+    font-size: 35px;
+    display: flex;
+    margin: -32px 0 0 220px;
+    font-weight: bolder !important;
+}
+
+.info{
+    margin-top: 25px;
+}
+
+.info h6, .info h5{
+    margin: 20px 0 0 10px;
+}
+
+.info input[type=text] {
+    border: none;
+    border-bottom: 2px solid rgb(142, 139, 139);
+    background-color:transparent;
+    width: 335px;
+    margin: 0 0 0 10px;
+    text-indent: 8px;
+} 
+
+.info input[type=password]{
+    border: none;
+    border-bottom: 2px solid rgb(142, 139, 139);
+    background-color:transparent;
+    width: 335px;
+    margin: 0 0 0 10px;
+    text-indent: 8px;
+}
+
+
+.submit-btn{
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+    width: 100vw;
+
+}
+
+.submit-btn input[type=submit] {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--btn-bg-color);
+    width: 200px;
+    height: 40px;
+    font-size: 12px;
+}
+
+
+.info form i{
+    margin-left: -20px ;
+    position: absolute;
+}
+
+
+.user-profile .back1 h2{
+    font-size: 20px;
+    margin: 25px 10px 25px -20px;
+}
+
+.user-profile .back1{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.user-profile .back1{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+
+.user-profile .back1 i{
+    font-size: 25px;
+    margin: 25px 40px 25px 15px;
+}
+
+
+.user-profile span p{
+    margin:20px;
+}
+
+#img-preview {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 175px;
+    height: 175px;
+    border: 2px dashed #333;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#img-preview img {
+    width: 120px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+@media only screen and (min-device-width: 200px) and (max-device-width: 500px) {
+
+
+    .user-profile .back{
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    .user-profile .back1{
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    .user-profile .back h1{
+        font-size: 25px;
+        margin: 25px 25px 25px 25px;
+    }
+    
+    
+    .user-profile .back i{
+        font-size: 25px;
+        margin: 25px 40px 25px 15px;
+    }
+    
+    
+    .user-icon img{
+        max-width: 130px;
+        display: flex;
+        margin-left: 120px;
+    }
+    
+    .add i{
+        font-size: 35px;
+        display: flex;
+        margin: -32px 0 0 220px;
+        font-weight: bolder !important;
+    }
+    
+    .info{
+        margin-top: 25px;
+    }
+    
+    .info h6, .info h5{
+        margin: 20px 0 0 10px;
+    }
+    
+    .info input[type=text] {
+        border: none;
+        border-bottom: 2px solid rgb(142, 139, 139);
+        background-color:transparent;
+        width: 335px;
+        margin: 0 0 0 10px;
+        text-indent: 8px;
+    } 
+    
+    .info input[type=password]{
+        border: none;
+        border-bottom: 2px solid rgb(142, 139, 139);
+        background-color:transparent;
+        width: 335px;
+        margin: 0 0 0 10px;
+        text-indent: 8px;
+    }
+    
+    
+    .submit-btn{
+        display:flex;
+        justify-content: center;
+        justify-items: center;
+        width: 100vw;
+    
+    }
+    
+    .submit-btn input[type=submit] {
+        border: none;
+        border-radius: 5px;
+        background-color: var(--btn-bg-color);
+        width: 200px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    
+    .info form i{
+        margin-left: -20px ;
+        position: absolute;
+    }
+    
+    
+    .user-profile .back1 h2{
+        font-size: 20px;
+        margin: 25px 10px 25px -20px;
+    }
+    
+    .user-profile .back1{
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    .user-profile .back1{
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    
+    
+    .user-profile .back1 i{
+        font-size: 25px;
+        margin: 25px 40px 25px 15px;
+    }
+    
+    
+    .user-profile span p{
+        margin:20px;
+    }
+    
+    #img-preview {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        height: 175px;
+        height: 175px;
+        border: 2px dashed #333;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    
+    #img-preview img {
+        width: 120px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+}

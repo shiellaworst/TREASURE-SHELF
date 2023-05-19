@@ -1,0 +1,645 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+:root{
+    /* ===== Color scheme ===== */
+    --primary-bg-color: #E5DDD3;
+    --secondary-bg-color:#30414B;
+    --text-color: #000;
+
+
+    /* ===== Color scheme ===== */
+    --btn-bg-color: #BCC4C9;
+
+
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+
+     /* ====== Logo ====== */
+     /* --logo: url('image/logo.png') */
+}
+
+
+
+body{
+    background-color: #FCEDCD !important;
+    font-family: monospace  !important;
+}
+
+
+
+ /* ====== <HEADER> ====== */
+
+.header {
+    box-shadow: gray;
+    text-align: center;
+    width: 100%;
+    background-color: #FCEDCD;
+}
+
+header{
+    background-color: #FCEDCD !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+
+.header input{
+    font-size: 12px;
+    align-items: center;
+    text-indent: 12px;
+    width: 50px;
+    
+}
+
+.header input::placeholder{
+    font-size: 20px;
+    align-items: center;
+    text-indent: 12px;
+}
+
+.image img{
+    height: 35px;
+        width: 35px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        border-width: 2px black;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+#logo {
+    height: 65px;
+    margin: 5px 0 0 0px;
+}
+
+#search {
+    border-radius: 45px;
+    box-sizing: border-box;
+    width: 50px;
+    height: 22px;
+    background-color: #00000000;
+    margin-left: 10px;
+}
+
+#search-btn {
+    border-radius: 5px;
+    background-color: #bcc4c9;
+    font-size: 11px;
+    height: 21px;
+    width: 50px;
+    border: none;
+    margin-right: 20px;
+}
+
+#user {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    margin: 0 15px 0 5px;
+}
+
+
+.header span{
+    font-size: 9px;
+}
+
+/* ====== </HEADER> ====== */
+
+
+/* ====== <1st Content> ====== */
+.genres {
+    position: absolute;
+    top: 0;
+    border: 3px solid blue;
+}
+.content {
+    margin-top: 70px;
+    background-image: url("../images/bg.png"); /* sets the background image of the carousel na hindi gumagalaw */
+    font-size: 20px;
+    background-size:cover;
+    width: 100%;
+    padding: 65px;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ 
+
+
+/*<Images Sliding>*/
+#img-btm {
+    border-radius: 20px; /* para sa sliding ng image */
+    height: 600px;
+    width: 400px;
+}
+  
+.imagemoving {
+    height: 300px; /* carousel image sizing */
+    width: 200px;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* ====== </1st Content> ====== */
+
+
+/* ====== <2nd Content> ====== */
+.image-container {
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+  
+.image-scroller {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding: 10px;
+}
+  
+.image-scroller img {
+    width: 300px;
+    /* height: auto; */
+    height: 400px;
+    object-fit: cover;
+    row-gap: 15px;
+    border-radius: 20px;
+}
+
+.img {
+    height: 3px;
+}
+  
+.book-genres {
+    text-align: center;
+}
+  
+.title {
+    text-align: center;
+    color: white !important;
+    font-size: small;
+    margin-top: -5px !important;
+}
+  
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+.container a, .container h6{
+    text-decoration:none !important;
+    color: black;
+    margin-top: 5px;
+}
+
+.container p{
+    font-size: 12px;
+}
+/* ====== </2nd Content> ====== */
+
+.book-list{
+    margin: 20px 0 25px 15px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+
+@media only screen and (min-device-width: 200px) and (max-device-width: 500px) {
+    /* ====== <HEADER> ====== */
+    .header {
+        box-shadow: gray;
+        text-align: center;
+        position: fixed;
+        margin-top: -70px;
+        z-index: 1 !important;
+    }
+
+    .header input{
+        font-size: 12px;
+        text-indent: 12px;
+        width: 120px !important;
+        margin-right: 5px;
+    }
+
+    .header input::placeholder{
+        font-size: 12px;
+        text-indent: 12px;
+    }
+
+    .header .user{
+        display: flex;
+        align-items: center;
+    }
+
+    .image img{
+        height: 30px;
+        width: 55px !important;
+        border-radius: 50%;
+        object-fit: cover;
+        border-width: 2px black;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    }
+    
+    #logo {
+        height: 65px;
+        margin: 5px 0 0 0px;
+    }
+
+    #search {
+        border-radius: 45px;
+        box-sizing: border-box;
+        width: 150px;
+        height: 22px;
+        background-color: #00000000;
+        margin-left: 10px;
+    }
+
+    #search-btn {
+        border-radius: 5px;
+        background-color: #bcc4c9;
+        font-size: 11px;
+        height: 21px;
+        width: 50px;
+        border: none;
+        margin-right: 20px;
+    }
+
+    #user {
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        margin: 0 15px 0 5px;
+        margin-right: 5px;
+        margin-left: -5px;
+    }
+
+    .header span{
+        font-size: 11px;
+        font-style: italic;
+        margin-left: -7px;
+    }
+
+    /* ====== </HEADER> ====== */
+
+    /* ====== <1st Content> ====== */
+    .genres {
+        position: absolute;
+        top: 0;
+    }
+    .content {
+        background-image: url("../images/bg.png");
+        font-size: medium;
+        font-size: 20px;
+        background-size: cover;
+        padding: 65px;
+        height: 270px;
+        background-position: center;
+    }
+
+    .content #button{
+        z-index: 0;
+    }
+
+    .top {
+        position: relative;
+        margin: 0 auto;
+        clear: left;
+        height: auto;
+
+        font-size: 20px;
+    }
+
+    
+    .img-btm {
+        border-radius: 10px;
+        height: 20px;
+        width: 200px;
+    }
+    
+    .imagemoving {
+        border-radius: 8px;
+        display: block;
+        height: 160px;
+        width: 110px;
+        margin: auto;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        margin-top: 10px;
+    }
+
+    .carousel-item {
+        z-index: 0;
+    }
+    
+      /* carousel-inner */
+    #inner {
+        width: 230px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    
+    }
+      /* carousel-end */
+    
+      /* .genres */
+    .title {
+        text-align: center;
+        margin-top: 16px;
+    }
+    
+    .book-genres {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bolder;
+        margin-top: -50px;
+    }
+      /* asdasdasdasd */
+
+      /* ====== </1st Content> ====== */
+
+
+      /* ====== </2nd Content> ====== */
+    .image-container {
+        width: 100%;
+        height: 10%;
+        overflow: hidden;
+    
+    }
+    
+    .image-scroller {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-y:hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+        padding: 2px;
+        height: 400px;
+    }
+    
+    .image-scroller img {
+        width: 147px;
+        height: 210px;
+        object-fit: cover;
+        row-gap: 10px;
+        border-radius: 15px;
+    }
+    
+    .container .desc{
+        display: inline-block;
+        width: 150px;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        display: -webkit-box; 
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        white-space: pre-wrap;
+        margin-top: -20px ;
+    }
+
+
+    .container .ttl{
+        display: inline-block;
+        max-width: 150px;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        display: -webkit-box; 
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        white-space: pre-wrap;
+        margin-top: -50px ;
+        text-overflow: clip;
+    }
+
+    
+    .container1 {
+        height: 100px;
+    }
+
+
+
+    .container a, .container h6{
+        text-decoration:none !important;
+        color: black;
+        margin-top: 10px;
+    }
+
+    .container p{
+        font-size: 12px;
+    }
+    
+    .img {
+        height: 3px;
+    }
+    
+      /* mobile next page */
+    #book {
+        background-color: antiquewhite;
+    }
+    
+    .book-image {
+        height: 30px;
+        width: 20px;
+        padding-left: 400px;
+        margin-top: 90px;
+    }
+
+
+      /* ====== </2nd Content> ====== */
+    
+    .book-list{
+        margin: 20px 0 25px 15px;
+        font-size: 20px !important;
+        font-weight: 500;
+    }
+      
+}
+
+
+
+
+/* ====== </MODAL> ====== */
+.container1{
+    z-index: 130 !important;
+}
+
+.popup{
+    width: 400px;
+    background: #283740;
+    border-radius: 10px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: aliceblue;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    
+}
+
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgb(red, green, blue, alpha);
+    background: #ffffff;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1000 !important;
+}
+
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #9EA6AA;
+    color: aliceblue;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px black;
+    font-size: 12px;
+}
+
+.user-menu {
+    text-align: left;
+    text-indent: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.user-menu a i{
+    font-size: 20px;
+    text-indent: -10px;
+    margin-right: 10px;
+}
+  
+.user-menu a {
+    color: black;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    background-color: #BCC4C9;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+  
+.user-menu a:hover {
+    background-color: #666060;
+    color: aliceblue;
+}
+
+@media only screen and (min-device-width: 200px) and (max-device-width: 500px) {
+
+    .popup{
+        width: 200px;
+        background: #283740;
+        border-radius: 10px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%)scale(0.1);
+        text-align: center;
+        padding: 0 30px 30px;
+        color: aliceblue;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+        
+    }
+    
+    .popup img{
+        width: 50px;
+        height: 50px;
+        margin-top: -25px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgb(red, green, blue, alpha);
+        background: #ffffff;
+    }
+    
+    .open-popup{
+        visibility: visible;
+        top: 50%;
+        position:fixed;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 500px !important;
+    }
+    
+    .popup h2{
+        font-size: 38px;
+        font-weight: 500;
+        margin: 30px 0 10px;
+    }
+    
+    
+    .popup button{
+        width: 100%;
+        margin-top: 20px;
+        padding: 5px;
+        background: #9EA6AA;
+        color: aliceblue;
+        border: 0;
+        outline: none;
+        font-size: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px black;
+        height: auto;
+    }
+    
+    .user-menu {
+        text-align: left;
+        text-indent: 20px;
+        width: 100%;
+    }
+    
+    .user-menu a i{
+        font-size: 15px;
+        text-indent: -10px;
+        margin-right: 5px;
+    }
+      
+    .user-menu a {
+        color: black;
+        display: block;
+        padding: 1px;
+        text-decoration: none;
+        background-color: #BCC4C9;
+        border-radius: 5px;
+        margin-top: 5px;
+        font-size: 10px;
+    }
+      
+    .user-menu a:hover {
+        background-color: #666060;
+        color: aliceblue;
+    }
+    
+}
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    background-color: #E5DDD3;
+    transition: ease-in-out 1.0s;
+    opacity: 1;
+    visibility: visible;
+    /* transition: opacity 3.0s, visibility 1.50s; */
+    z-index: 100 !important;
+}
+
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* .loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid white;
+    border-top-color: black;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+} */
+
+.loader img{
+    max-width: 180px;
+    margin-bottom: 180px;
+}
+
+@keyframes loading{
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+
